@@ -1,8 +1,10 @@
 name: Feed Getter
 
 on:
-  schedule:
-    - cron: "0 * * * *" # 毎日毎時0分
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
