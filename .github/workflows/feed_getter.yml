@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  feed-getter:
+  feedgetter:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo content
