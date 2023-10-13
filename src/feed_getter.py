@@ -24,11 +24,16 @@ class FeedParser:
 			stub['title'] = entry['title']
 			print(entry['title'])
 			stub['id'] = entry['id']
+			print(entry['id'])
 			stub['updated'] = entry['updated']
+			print(entry['updated'])
 			stub['author'] = entry['author']['name']
+			print(entry['author']['name'])
 			stub['link'] = entry['link']['@href']
 			print(entry['link']['@href'])
 			stub['content'] = entry['content']
+			print(entry['content'])
+			print('')
 
 def get_and_save_feed():
 	output_file = "output/feed.xml"
