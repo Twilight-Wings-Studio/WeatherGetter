@@ -2,13 +2,32 @@ import os
 import requests
 import xmltodict
 
-class FeedParser:
-	#data = {'entries': []}
+class RegularFeedEntry:
+	def __init__(self, title, id, updated, author, link, content):
+		self.title = title
+		self.id = id
+		self.updated = updated
+		self.author = author
+		self.link = link
+		self.content = content
+		print(title)
+		print(id)
+		print(updated)
+		print(author)
+		print(link)
+		print(content)
+		print('')
+
+# 高頻度（定時）
+class RegularFeed:
 	def __init__(self):
-		#self.USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
-		input_file = "output/feed.xml"
-		with open(input_file) as file:
-			self.data = self.parseFeed(xmltodict.parse(file.read()))
+		self.USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
+		self.Feed_Url = 'https://www.data.jma.go.jp/developer/xml/feed/regular.xml'
+		self.Input_File = 'output/feed.xml'
+		self.getAndSaveFeed(self.Input_File)
+		with open(self.Input_File) as file:
+			self.entries = []
+			self.parseFeed(xmltodict.parse(file.read()))
 
 	def parseFeed(self, dictobj):
 		feed = dictobj['feed']
@@ -19,48 +38,37 @@ class FeedParser:
 			feed['entry'] = [feed['entry']]
 
 		for entry in feed['entry']:
-			stub = {}
-			#
-			stub['title'] = entry['title']
-			print(entry['title'])
-			stub['id'] = entry['id']
-			print(entry['id'])
-			stub['updated'] = entry['updated']
-			print(entry['updated'])
-			stub['author'] = entry['author']['name']
-			print(entry['author']['name'])
-			stub['link'] = entry['link']['@href']
-			print(entry['link']['@href'])
-			stub['content'] = entry['content']
-			print(entry['content'])
-			print('')
+			newObj = RegularFeedEntry(
+				entry['title'],
+				entry['id'],
+				entry['updated'],
+				entry['author']['name'],
+				entry['link']['@href'],
+				entry['content'])
+			self.entries.append(newObj)
 
-def get_and_save_feed():
-	output_file = "output/feed.xml"
+	def downloadFeed(self, url):
+		# 気象庁feed
+		headers = {'User-Agent': self.USER_AGENT}
+		res = requests.get(url, headers = headers)
+		return res
+
+	def getAndSaveFeed(self, output_file):	
+		try:
+			# フィードをダウンロード
+			response = self.downloadFeed(self.Feed_Url)
+			response.raise_for_status()  # エラーチェック
+			# ダウンロードしたフィードをファイルに保存
+			with open(output_file, 'wb') as file:
+				file.write(response.content)
+			#
+			print(f'フィードを {output_file} に保存しました。')
+		except requests.exceptions.HTTPError as e:
+			print(f'HTTPエラーが発生しました: {e}')
+
+if __name__ == "__main__":
 	if not os.path.exists("output"):
 		# ディレクトリが存在しない場合、ディレクトリを作成する
 		os.makedirs("output")
-	
-	try:
-		# フィードをダウンロード
-		response = downloadFeed()
-		response.raise_for_status()  # エラーチェック
-		# ダウンロードしたフィードをファイルに保存
-		with open(output_file, 'wb') as file:
-			file.write(response.content)
-		#
-		print(f'フィードを {output_file} に保存しました。')
-	except requests.exceptions.HTTPError as e:
-		print(f'HTTPエラーが発生しました: {e}')
 
-def downloadFeed():
-	# 気象庁feed
-	feedurl = 'https://www.data.jma.go.jp/developer/xml/feed/regular.xml'
-	ua = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
-	headers = {'User-Agent': ua}
-	res = requests.get(feedurl, headers = headers)
-	return res
-
-if __name__ == "__main__":
-	get_and_save_feed()
-	parser = FeedParser()
+	parser = RegularFeed()
