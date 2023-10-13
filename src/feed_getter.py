@@ -27,6 +27,7 @@ class FeedParser:
 			stub['updated'] = entry['updated']
 			stub['author'] = entry['author']['name']
 			stub['link'] = entry['link']['@href']
+			print(entry['link']['@href'])
 			stub['content'] = entry['content']
 
 def get_and_save_feed():
