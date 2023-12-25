@@ -58,7 +58,7 @@ class RegularFeed:
 					entry['updated'],
 					entry['author']['name'],
 					entry['link']['@href'],
-					entry['content'])
+					entry['content']['#text'])
 				self.entries.append(newObj)
 
 if __name__ == "__main__":
