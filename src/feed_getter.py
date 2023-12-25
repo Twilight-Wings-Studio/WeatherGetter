@@ -51,8 +51,8 @@ class RegularFeed:
 	def parseFeed(self, dictobj):
 		feed = dictobj['feed']
 		for entry in feed['entry']:
-			print(entry['title'])
-			if '府県天気予報' in entry['title']
+			titleText = entry['title'];
+			if '府県天気予報' in titleText
 				newObj = RegularFeedEntry(
 					entry['title'],
 					entry['id'],
