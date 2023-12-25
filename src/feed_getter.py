@@ -66,7 +66,7 @@ class RegularFeed:
 					entry['content']['#text'])
 				#getAndSaveFeed(entry['link']['@href'], 'output/' + output_file)
 				self.entries.append(newObj)
-
+				
 	def parseFeedEntry(self, entry):
 		output_name = basename = os.path.basename(entry['link']['@href'])
 		print(output_name)
