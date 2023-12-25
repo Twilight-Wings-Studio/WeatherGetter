@@ -53,19 +53,19 @@ class RegularFeed:
 		for entry in feed['entry']:
 			if '府県天気予報' in entry['title']:
 				parseFeedEntry(entry)
-
 			if '府県週間天気予報' in entry['title']:
-				output_name = basename = os.path.basename(entry['link']['@href'])
-				print(output_name)
-				newObj = RegularFeedEntry(
-					entry['title'],
-					entry['id'],
-					entry['updated'],
-					entry['author']['name'],
-					entry['link']['@href'],
-					entry['content']['#text'])
+				parseFeedEntry(entry)
+				#output_name = basename = os.path.basename(entry['link']['@href'])
+				#print(output_name)
+				#newObj = RegularFeedEntry(
+				#	entry['title'],
+				#	entry['id'],
+				#	entry['updated'],
+				#	entry['author']['name'],
+				#	entry['link']['@href'],
+				#	entry['content']['#text'])
 				#getAndSaveFeed(entry['link']['@href'], 'output/' + output_file)
-				self.entries.append(newObj)
+				#self.entries.append(newObj)
 				
 	def parseFeedEntry(self, entry):
 		output_name = basename = os.path.basename(entry['link']['@href'])
@@ -79,7 +79,6 @@ class RegularFeed:
 			entry['content']['#text'])
 		#getAndSaveFeed(entry['link']['@href'], 'output/' + output_file)
 		self.entries.append(newObj)
-		
 
 if __name__ == "__main__":
 	if not os.path.exists("output"):
