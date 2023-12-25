@@ -52,9 +52,9 @@ class RegularFeed:
 		feed = dictobj['feed']
 		for entry in feed['entry']:
 			if '府県天気予報' in entry['title']:
-				parseFeedEntry(entry)
+				self.parseFeedEntry(entry)
 			if '府県週間天気予報' in entry['title']:
-				parseFeedEntry(entry)
+				self.parseFeedEntry(entry)
 				#output_name = basename = os.path.basename(entry['link']['@href'])
 				#print(output_name)
 				#newObj = RegularFeedEntry(
