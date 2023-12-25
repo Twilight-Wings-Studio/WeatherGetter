@@ -55,20 +55,10 @@ class RegularFeed:
 				self.parseFeedEntry(entry)
 			if '府県週間天気予報' in entry['title']:
 				self.parseFeedEntry(entry)
-				#output_name = basename = os.path.basename(entry['link']['@href'])
-				#print(output_name)
-				#newObj = RegularFeedEntry(
-				#	entry['title'],
-				#	entry['id'],
-				#	entry['updated'],
-				#	entry['author']['name'],
-				#	entry['link']['@href'],
-				#	entry['content']['#text'])
-				#getAndSaveFeed(entry['link']['@href'], 'output/' + output_file)
-				#self.entries.append(newObj)
 				
 	def parseFeedEntry(self, entry):
 		output_name = basename = os.path.basename(entry['link']['@href'])
+		getAndSaveFeed(entry['link']['@href'], 'output/' + output_file)
 		print(output_name)
 		newObj = RegularFeedEntry(
 			entry['title'],
@@ -77,7 +67,6 @@ class RegularFeed:
 			entry['author']['name'],
 			entry['link']['@href'],
 			entry['content']['#text'])
-		#getAndSaveFeed(entry['link']['@href'], 'output/' + output_file)
 		self.entries.append(newObj)
 
 if __name__ == "__main__":
