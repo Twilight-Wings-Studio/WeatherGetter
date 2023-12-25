@@ -22,7 +22,7 @@ class RegularFeedEntry:
 class RegularFeed:
 	def __init__(self):
 		self.USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
-		self.Feed_Url = 'https://www.data.jma.go.jp/developer/xml/feed/regular.xml'
+		self.Feed_Url = 'https://www.data.jma.go.jp/developer/xml/feed/regular_l.xml'
 		self.Input_File = 'output/feed.xml'
 		self.getAndSaveFeed(self.Input_File)
 		with open(self.Input_File) as file:
