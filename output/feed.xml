@@ -2,8 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom" lang="ja">
   <title>高頻度（定時）</title>
   <subtitle>JMAXML publishing feed</subtitle>
-  <updated>2023-12-25T11:10:49+09:00</updated>
-  <id>https://www.data.jma.go.jp/developer/xml/feed/regular.xml#short_1703470249</id>
+  <updated>2023-12-25T11:21:04+09:00</updated>
+  <id>https://www.data.jma.go.jp/developer/xml/feed/regular.xml#short_1703470864</id>
   <link rel="related" href="https://www.jma.go.jp/"/>
   <link rel="self" href="https://www.data.jma.go.jp/developer/xml/feed/regular.xml"/>
   <link rel="hub" href="http://alert-hub.appspot.com/"/>
@@ -11,6 +11,26 @@
 <a href="https://www.jma.go.jp/jma/kishou/info/coment.html">利用規約</a>,
 <a href="https://www.jma.go.jp/jma/en/copyright.html">Terms of Use</a>
 ]]></rights>
+  <entry>
+    <title>大雨危険度通知</title>
+    <id>https://www.data.jma.go.jp/developer/xml/data/20231225022050_0_VPRN50_010000.xml</id>
+    <updated>2023-12-25T02:20:17Z</updated>
+    <author>
+      <name>気象庁</name>
+    </author>
+    <link type="application/xml" href="https://www.data.jma.go.jp/developer/xml/data/20231225022050_0_VPRN50_010000.xml"/>
+    <content type="text">【大雨危険度通知】</content>
+  </entry>
+  <entry>
+    <title>地上実況図</title>
+    <id>https://www.data.jma.go.jp/developer/xml/data/20231225021530_0_VZSA50_010000.xml</id>
+    <updated>2023-12-25T02:14:53Z</updated>
+    <author>
+      <name>気象庁</name>
+    </author>
+    <link type="application/xml" href="https://www.data.jma.go.jp/developer/xml/data/20231225021530_0_VZSA50_010000.xml"/>
+    <content type="text">【地上実況図】</content>
+  </entry>
   <entry>
     <title>大雨危険度通知</title>
     <id>https://www.data.jma.go.jp/developer/xml/data/20231225021040_0_VPRN50_010000.xml</id>
@@ -5259,16 +5279,6 @@
       <name>気象庁</name>
     </author>
     <link type="application/xml" href="https://www.data.jma.go.jp/developer/xml/data/20231224163021_0_VPRN50_010000.xml"/>
-    <content type="text">【大雨危険度通知】</content>
-  </entry>
-  <entry>
-    <title>大雨危険度通知</title>
-    <id>https://www.data.jma.go.jp/developer/xml/data/20231224162120_0_VPRN50_010000.xml</id>
-    <updated>2023-12-24T16:20:39Z</updated>
-    <author>
-      <name>気象庁</name>
-    </author>
-    <link type="application/xml" href="https://www.data.jma.go.jp/developer/xml/data/20231224162120_0_VPRN50_010000.xml"/>
     <content type="text">【大雨危険度通知】</content>
   </entry>
 </feed>
