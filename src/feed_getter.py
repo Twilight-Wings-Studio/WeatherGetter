@@ -18,7 +18,7 @@ class RegularFeedEntry:
 		print(content)
 		print('')
 
-# 高頻度（定時）
+# 長期フィード（定時）
 class RegularFeed:
 	def __init__(self):
 		self.USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
