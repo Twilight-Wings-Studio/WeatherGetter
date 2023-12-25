@@ -29,24 +29,6 @@ class RegularFeed:
 			self.entries = []
 			self.parseFeed(xmltodict.parse(file.read()))
 
-	def parseFeed(self, dictobj):
-		feed = dictobj['feed']
-		#fix for cases where video source has no videos
-		if not feed.get('entry'): return data
-		#fix for cases where video source only has one video
-		if isinstance(feed['entry'], dict):
-			feed['entry'] = [feed['entry']]
-
-		for entry in feed['entry']:
-			newObj = RegularFeedEntry(
-				entry['title'],
-				entry['id'],
-				entry['updated'],
-				entry['author']['name'],
-				entry['link']['@href'],
-				entry['content'])
-			self.entries.append(newObj)
-
 	def downloadFeed(self, url):
 		# 気象庁feed
 		headers = {'User-Agent': self.USER_AGENT}
@@ -65,6 +47,25 @@ class RegularFeed:
 			print(f'フィードを {output_file} に保存しました。')
 		except requests.exceptions.HTTPError as e:
 			print(f'HTTPエラーが発生しました: {e}')
+			
+	def parseFeed(self, dictobj):
+		feed = dictobj['feed']
+		#fix for cases where video source has no videos
+		if not feed.get('entry'): return data
+		#fix for cases where video source only has one video
+		if isinstance(feed['entry'], dict):
+			feed['entry'] = [feed['entry']]
+
+		for entry in feed['entry']:
+			if '府県天気予報' in entry['title']
+				newObj = RegularFeedEntry(
+					entry['title'],
+					entry['id'],
+					entry['updated'],
+					entry['author']['name'],
+					entry['link']['@href'],
+					entry['content'])
+				self.entries.append(newObj)
 
 if __name__ == "__main__":
 	if not os.path.exists("output"):
