@@ -50,13 +50,8 @@ class RegularFeed:
 			
 	def parseFeed(self, dictobj):
 		feed = dictobj['feed']
-		#fix for cases where video source has no videos
-		if not feed.get('entry'): return data
-		#fix for cases where video source only has one video
-		if isinstance(feed['entry'], dict):
-			feed['entry'] = [feed['entry']]
-
 		for entry in feed['entry']:
+			print(entry['title'])
 			if '府県天気予報' in entry['title']
 				newObj = RegularFeedEntry(
 					entry['title'],
