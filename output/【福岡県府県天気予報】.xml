@@ -2,16 +2,16 @@
 <Report xmlns="http://xml.kishou.go.jp/jmaxml1/" xmlns:jmx="http://xml.kishou.go.jp/jmaxml1/" xmlns:jmx_add="http://xml.kishou.go.jp/jmaxml1/addition1/">
 <Control>
 <Title>府県天気予報（Ｒ１）</Title>
-<DateTime>2023-12-24T19:41:03Z</DateTime>
+<DateTime>2025-11-11T07:31:29Z</DateTime>
 <Status>通常</Status>
 <EditorialOffice>福岡管区気象台</EditorialOffice>
 <PublishingOffice>福岡管区気象台</PublishingOffice>
 </Control>
 <Head xmlns="http://xml.kishou.go.jp/jmaxml1/informationBasis1/">
 <Title>福岡県府県天気予報</Title>
-<ReportDateTime>2023-12-25T05:00:00+09:00</ReportDateTime>
-<TargetDateTime>2023-12-25T05:00:00+09:00</TargetDateTime>
-<TargetDuration>P1DT19H</TargetDuration>
+<ReportDateTime>2025-11-11T17:00:00+09:00</ReportDateTime>
+<TargetDateTime>2025-11-11T17:00:00+09:00</TargetDateTime>
+<TargetDuration>P2DT7H</TargetDuration>
 <EventID/>
 <InfoType>発表</InfoType>
 <Serial/>
@@ -26,14 +26,19 @@
 <TimeSeriesInfo>
 <TimeDefines>
 <TimeDefine timeId="1">
-<DateTime>2023-12-25T05:00:00+09:00</DateTime>
-<Duration>PT19H</Duration>
-<Name>今日</Name>
+<DateTime>2025-11-11T17:00:00+09:00</DateTime>
+<Duration>PT7H</Duration>
+<Name>今夜</Name>
 </TimeDefine>
 <TimeDefine timeId="2">
-<DateTime>2023-12-26T00:00:00+09:00</DateTime>
+<DateTime>2025-11-12T00:00:00+09:00</DateTime>
 <Duration>P1D</Duration>
 <Name>明日</Name>
+</TimeDefine>
+<TimeDefine timeId="3">
+<DateTime>2025-11-13T00:00:00+09:00</DateTime>
+<Duration>P1D</Duration>
+<Name>明後日</Name>
 </TimeDefine>
 </TimeDefines>
 <Item>
@@ -42,32 +47,37 @@
 <Type>天気</Type>
 <DetailForecast>
 <WeatherForecastPart refID="1">
-<Sentence>くもり　所により　昼過ぎ　まで　雨か雪</Sentence>
+<Sentence>晴れ</Sentence>
 <Base>
-<jmx_eb:Weather type="天気">くもり</jmx_eb:Weather>
+<jmx_eb:Weather type="天気">晴れ</jmx_eb:Weather>
 </Base>
-<SubArea>
-<Sentence type="地域天気">所により　昼過ぎ　まで　雨か雪</Sentence>
-</SubArea>
 </WeatherForecastPart>
 <WeatherForecastPart refID="2">
-<Sentence>くもり　時々　晴れ</Sentence>
+<Sentence>晴れ　昼過ぎ　から　くもり</Sentence>
+<Base>
+<jmx_eb:Weather type="天気">晴れ</jmx_eb:Weather>
+</Base>
+<Becoming>
+<TimeModifier>昼過ぎ　から</TimeModifier>
+<jmx_eb:Weather type="天気">くもり</jmx_eb:Weather>
+</Becoming>
+</WeatherForecastPart>
+<WeatherForecastPart refID="3">
+<Sentence>くもり</Sentence>
 <Base>
 <jmx_eb:Weather type="天気">くもり</jmx_eb:Weather>
 </Base>
-<Temporary>
-<TimeModifier>時々</TimeModifier>
-<jmx_eb:Weather type="天気">晴れ</jmx_eb:Weather>
-</Temporary>
 </WeatherForecastPart>
 </DetailForecast>
 <WeatherPart>
-<jmx_eb:Weather refID="1" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="2" type="天気">くもり時々晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="1" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="2" type="天気">晴れ後くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="3" type="天気">くもり</jmx_eb:Weather>
 </WeatherPart>
 <WeatherCodePart>
-<jmx_eb:WeatherCode refID="1" type="天気予報用テロップ番号">200</jmx_eb:WeatherCode>
-<jmx_eb:WeatherCode refID="2" type="天気予報用テロップ番号">201</jmx_eb:WeatherCode>
+<jmx_eb:WeatherCode refID="1" type="天気予報用テロップ番号">100</jmx_eb:WeatherCode>
+<jmx_eb:WeatherCode refID="2" type="天気予報用テロップ番号">111</jmx_eb:WeatherCode>
+<jmx_eb:WeatherCode refID="3" type="天気予報用テロップ番号">200</jmx_eb:WeatherCode>
 </WeatherCodePart>
 </Property>
 </Kind>
@@ -76,26 +86,38 @@
 <Type>風</Type>
 <DetailForecast>
 <WindForecastPart refID="1">
-<Sentence>北西の風　海上　では　北西の風　やや強く</Sentence>
+<Sentence>北の風　海上　では　北東の風　やや強く</Sentence>
 <Base>
-<jmx_eb:WindDirection description="北西の風" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
+<jmx_eb:WindDirection description="北の風" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
 </Base>
 <SubArea>
 <AreaName>海上</AreaName>
 <Base>
-<jmx_eb:WindDirection condition="やや強く" description="北西の風　やや強く" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
+<jmx_eb:WindDirection condition="やや強く" description="北東の風　やや強く" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
 </Base>
 </SubArea>
 </WindForecastPart>
 <WindForecastPart refID="2">
-<Sentence>南の風　後　西の風</Sentence>
+<Sentence>北東の風　後　北の風　海上　では　北東の風　やや強く</Sentence>
 <Base>
-<jmx_eb:WindDirection description="南の風" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
+<jmx_eb:WindDirection description="北東の風" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
 </Base>
 <Becoming>
 <TimeModifier>後</TimeModifier>
-<jmx_eb:WindDirection description="西の風" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
+<jmx_eb:WindDirection description="北の風" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
 </Becoming>
+<SubArea>
+<AreaName>海上</AreaName>
+<Base>
+<jmx_eb:WindDirection condition="やや強く" description="北東の風　やや強く" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
+</Base>
+</SubArea>
+</WindForecastPart>
+<WindForecastPart refID="3">
+<Sentence>北の風</Sentence>
+<Base>
+<jmx_eb:WindDirection description="北の風" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
+</Base>
 </WindForecastPart>
 </DetailForecast>
 </Property>
@@ -105,12 +127,26 @@
 <Type>波</Type>
 <DetailForecast>
 <WaveHeightForecastPart refID="1">
-<Sentence>１．５メートル</Sentence>
+<Sentence>１．５メートル　後　２メートル</Sentence>
 <Base>
 <jmx_eb:WaveHeight description="１メートル５０センチ" type="波高" unit="m">1.5</jmx_eb:WaveHeight>
 </Base>
+<Becoming>
+<TimeModifier>後</TimeModifier>
+<jmx_eb:WaveHeight description="２メートル" type="波高" unit="m">2.0</jmx_eb:WaveHeight>
+</Becoming>
 </WaveHeightForecastPart>
 <WaveHeightForecastPart refID="2">
+<Sentence>２メートル　後　１メートル</Sentence>
+<Base>
+<jmx_eb:WaveHeight description="２メートル" type="波高" unit="m">2.0</jmx_eb:WaveHeight>
+</Base>
+<Becoming>
+<TimeModifier>後</TimeModifier>
+<jmx_eb:WaveHeight description="１メートル" type="波高" unit="m">1.0</jmx_eb:WaveHeight>
+</Becoming>
+</WaveHeightForecastPart>
+<WaveHeightForecastPart refID="3">
 <Sentence>１メートル</Sentence>
 <Base>
 <jmx_eb:WaveHeight description="１メートル" type="波高" unit="m">1.0</jmx_eb:WaveHeight>
@@ -130,32 +166,37 @@
 <Type>天気</Type>
 <DetailForecast>
 <WeatherForecastPart refID="1">
-<Sentence>くもり　所により　昼過ぎ　まで　雨か雪</Sentence>
+<Sentence>晴れ</Sentence>
 <Base>
-<jmx_eb:Weather type="天気">くもり</jmx_eb:Weather>
+<jmx_eb:Weather type="天気">晴れ</jmx_eb:Weather>
 </Base>
-<SubArea>
-<Sentence type="地域天気">所により　昼過ぎ　まで　雨か雪</Sentence>
-</SubArea>
 </WeatherForecastPart>
 <WeatherForecastPart refID="2">
-<Sentence>くもり　時々　晴れ</Sentence>
+<Sentence>晴れ　夕方　から　くもり</Sentence>
+<Base>
+<jmx_eb:Weather type="天気">晴れ</jmx_eb:Weather>
+</Base>
+<Becoming>
+<TimeModifier>夕方　から</TimeModifier>
+<jmx_eb:Weather type="天気">くもり</jmx_eb:Weather>
+</Becoming>
+</WeatherForecastPart>
+<WeatherForecastPart refID="3">
+<Sentence>くもり</Sentence>
 <Base>
 <jmx_eb:Weather type="天気">くもり</jmx_eb:Weather>
 </Base>
-<Temporary>
-<TimeModifier>時々</TimeModifier>
-<jmx_eb:Weather type="天気">晴れ</jmx_eb:Weather>
-</Temporary>
 </WeatherForecastPart>
 </DetailForecast>
 <WeatherPart>
-<jmx_eb:Weather refID="1" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="2" type="天気">くもり時々晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="1" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="2" type="天気">晴れ後くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="3" type="天気">くもり</jmx_eb:Weather>
 </WeatherPart>
 <WeatherCodePart>
-<jmx_eb:WeatherCode refID="1" type="天気予報用テロップ番号">200</jmx_eb:WeatherCode>
-<jmx_eb:WeatherCode refID="2" type="天気予報用テロップ番号">201</jmx_eb:WeatherCode>
+<jmx_eb:WeatherCode refID="1" type="天気予報用テロップ番号">100</jmx_eb:WeatherCode>
+<jmx_eb:WeatherCode refID="2" type="天気予報用テロップ番号">111</jmx_eb:WeatherCode>
+<jmx_eb:WeatherCode refID="3" type="天気予報用テロップ番号">200</jmx_eb:WeatherCode>
 </WeatherCodePart>
 </Property>
 </Kind>
@@ -164,25 +205,41 @@
 <Type>風</Type>
 <DetailForecast>
 <WindForecastPart refID="1">
-<Sentence>西の風　海上　では　北西の風　やや強く</Sentence>
+<Sentence>北の風　後　東の風　北九州・遠賀地区　では　北東の風　やや強く</Sentence>
 <Base>
-<jmx_eb:WindDirection description="西の風" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
+<jmx_eb:WindDirection description="北の風" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
 </Base>
+<Becoming>
+<TimeModifier>後</TimeModifier>
+<jmx_eb:WindDirection description="東の風" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+</Becoming>
 <SubArea>
-<AreaName>海上</AreaName>
+<AreaName>北九州・遠賀地区</AreaName>
 <Base>
-<jmx_eb:WindDirection condition="やや強く" description="北西の風　やや強く" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
+<jmx_eb:WindDirection condition="やや強く" description="北東の風　やや強く" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
 </Base>
 </SubArea>
 </WindForecastPart>
 <WindForecastPart refID="2">
-<Sentence>南の風　後　西の風</Sentence>
+<Sentence>東の風　北九州・遠賀地区　では　北東の風　やや強く</Sentence>
+<Base>
+<jmx_eb:WindDirection description="東の風" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+</Base>
+<SubArea>
+<AreaName>北九州・遠賀地区</AreaName>
+<Base>
+<jmx_eb:WindDirection condition="やや強く" description="北東の風　やや強く" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
+</Base>
+</SubArea>
+</WindForecastPart>
+<WindForecastPart refID="3">
+<Sentence>南の風　後　北西の風</Sentence>
 <Base>
 <jmx_eb:WindDirection description="南の風" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
 </Base>
 <Becoming>
 <TimeModifier>後</TimeModifier>
-<jmx_eb:WindDirection description="西の風" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
+<jmx_eb:WindDirection description="北西の風" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
 </Becoming>
 </WindForecastPart>
 </DetailForecast>
@@ -193,22 +250,38 @@
 <Type>波</Type>
 <DetailForecast>
 <WaveHeightForecastPart refID="1">
-<Sentence>１．５メートル　ただし　瀬戸内側　では　１メートル　後　０．５メートル</Sentence>
+<Sentence>１．５メートル　後　２メートル　ただし　瀬戸内側　では　０．５メートル</Sentence>
 <Base>
 <jmx_eb:WaveHeight description="１メートル５０センチ" type="波高" unit="m">1.5</jmx_eb:WaveHeight>
 </Base>
+<Becoming>
+<TimeModifier>後</TimeModifier>
+<jmx_eb:WaveHeight description="２メートル" type="波高" unit="m">2.0</jmx_eb:WaveHeight>
+</Becoming>
 <SubArea>
 <AreaName>瀬戸内側</AreaName>
 <Base>
-<jmx_eb:WaveHeight description="１メートル" type="波高" unit="m">1.0</jmx_eb:WaveHeight>
-</Base>
-<Becoming>
-<TimeModifier>後</TimeModifier>
 <jmx_eb:WaveHeight description="５０センチ" type="波高" unit="m">0.5</jmx_eb:WaveHeight>
-</Becoming>
+</Base>
 </SubArea>
 </WaveHeightForecastPart>
 <WaveHeightForecastPart refID="2">
+<Sentence>２メートル　後　１メートル　ただし　瀬戸内側　では　０．５メートル</Sentence>
+<Base>
+<jmx_eb:WaveHeight description="２メートル" type="波高" unit="m">2.0</jmx_eb:WaveHeight>
+</Base>
+<Becoming>
+<TimeModifier>後</TimeModifier>
+<jmx_eb:WaveHeight description="１メートル" type="波高" unit="m">1.0</jmx_eb:WaveHeight>
+</Becoming>
+<SubArea>
+<AreaName>瀬戸内側</AreaName>
+<Base>
+<jmx_eb:WaveHeight description="５０センチ" type="波高" unit="m">0.5</jmx_eb:WaveHeight>
+</Base>
+</SubArea>
+</WaveHeightForecastPart>
+<WaveHeightForecastPart refID="3">
 <Sentence>１メートル　ただし　瀬戸内側　では　０．５メートル</Sentence>
 <Base>
 <jmx_eb:WaveHeight description="１メートル" type="波高" unit="m">1.0</jmx_eb:WaveHeight>
@@ -234,32 +307,37 @@
 <Type>天気</Type>
 <DetailForecast>
 <WeatherForecastPart refID="1">
-<Sentence>くもり　所により　昼過ぎ　まで　雪か雨</Sentence>
-<Base>
-<jmx_eb:Weather type="天気">くもり</jmx_eb:Weather>
-</Base>
-<SubArea>
-<Sentence type="地域天気">所により　昼過ぎ　まで　雪か雨</Sentence>
-</SubArea>
-</WeatherForecastPart>
-<WeatherForecastPart refID="2">
-<Sentence>晴れ　時々　くもり</Sentence>
+<Sentence>晴れ</Sentence>
 <Base>
 <jmx_eb:Weather type="天気">晴れ</jmx_eb:Weather>
 </Base>
-<Temporary>
-<TimeModifier>時々</TimeModifier>
+</WeatherForecastPart>
+<WeatherForecastPart refID="2">
+<Sentence>晴れ　昼過ぎ　から　くもり</Sentence>
+<Base>
+<jmx_eb:Weather type="天気">晴れ</jmx_eb:Weather>
+</Base>
+<Becoming>
+<TimeModifier>昼過ぎ　から</TimeModifier>
 <jmx_eb:Weather type="天気">くもり</jmx_eb:Weather>
-</Temporary>
+</Becoming>
+</WeatherForecastPart>
+<WeatherForecastPart refID="3">
+<Sentence>くもり</Sentence>
+<Base>
+<jmx_eb:Weather type="天気">くもり</jmx_eb:Weather>
+</Base>
 </WeatherForecastPart>
 </DetailForecast>
 <WeatherPart>
-<jmx_eb:Weather refID="1" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="2" type="天気">晴れ時々くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="1" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="2" type="天気">晴れ後くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="3" type="天気">くもり</jmx_eb:Weather>
 </WeatherPart>
 <WeatherCodePart>
-<jmx_eb:WeatherCode refID="1" type="天気予報用テロップ番号">200</jmx_eb:WeatherCode>
-<jmx_eb:WeatherCode refID="2" type="天気予報用テロップ番号">101</jmx_eb:WeatherCode>
+<jmx_eb:WeatherCode refID="1" type="天気予報用テロップ番号">100</jmx_eb:WeatherCode>
+<jmx_eb:WeatherCode refID="2" type="天気予報用テロップ番号">111</jmx_eb:WeatherCode>
+<jmx_eb:WeatherCode refID="3" type="天気予報用テロップ番号">200</jmx_eb:WeatherCode>
 </WeatherCodePart>
 </Property>
 </Kind>
@@ -268,20 +346,30 @@
 <Type>風</Type>
 <DetailForecast>
 <WindForecastPart refID="1">
-<Sentence>西の風</Sentence>
+<Sentence>北の風　後　南の風</Sentence>
 <Base>
-<jmx_eb:WindDirection description="西の風" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
+<jmx_eb:WindDirection description="北の風" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
 </Base>
+<Becoming>
+<TimeModifier>後</TimeModifier>
+<jmx_eb:WindDirection description="南の風" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
+</Becoming>
 </WindForecastPart>
 <WindForecastPart refID="2">
-<Sentence>南の風　日中　西の風</Sentence>
+<Sentence>東の風</Sentence>
+<Base>
+<jmx_eb:WindDirection description="東の風" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+</Base>
+</WindForecastPart>
+<WindForecastPart refID="3">
+<Sentence>南の風　後　北の風</Sentence>
 <Base>
 <jmx_eb:WindDirection description="南の風" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
 </Base>
-<Temporary>
-<TimeModifier>日中</TimeModifier>
-<jmx_eb:WindDirection description="西の風" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-</Temporary>
+<Becoming>
+<TimeModifier>後</TimeModifier>
+<jmx_eb:WindDirection description="北の風" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
+</Becoming>
 </WindForecastPart>
 </DetailForecast>
 </Property>
@@ -297,29 +385,37 @@
 <Type>天気</Type>
 <DetailForecast>
 <WeatherForecastPart refID="1">
+<Sentence>晴れ</Sentence>
+<Base>
+<jmx_eb:Weather type="天気">晴れ</jmx_eb:Weather>
+</Base>
+</WeatherForecastPart>
+<WeatherForecastPart refID="2">
+<Sentence>晴れ　昼過ぎ　から　くもり</Sentence>
+<Base>
+<jmx_eb:Weather type="天気">晴れ</jmx_eb:Weather>
+</Base>
+<Becoming>
+<TimeModifier>昼過ぎ　から</TimeModifier>
+<jmx_eb:Weather type="天気">くもり</jmx_eb:Weather>
+</Becoming>
+</WeatherForecastPart>
+<WeatherForecastPart refID="3">
 <Sentence>くもり</Sentence>
 <Base>
 <jmx_eb:Weather type="天気">くもり</jmx_eb:Weather>
 </Base>
 </WeatherForecastPart>
-<WeatherForecastPart refID="2">
-<Sentence>晴れ　昼過ぎ　から　時々　くもり</Sentence>
-<Base>
-<jmx_eb:Weather type="天気">晴れ</jmx_eb:Weather>
-</Base>
-<Temporary>
-<TimeModifier>昼過ぎ　から　時々</TimeModifier>
-<jmx_eb:Weather type="天気">くもり</jmx_eb:Weather>
-</Temporary>
-</WeatherForecastPart>
 </DetailForecast>
 <WeatherPart>
-<jmx_eb:Weather refID="1" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="2" type="天気">晴れ後時々くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="1" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="2" type="天気">晴れ後くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="3" type="天気">くもり</jmx_eb:Weather>
 </WeatherPart>
 <WeatherCodePart>
-<jmx_eb:WeatherCode refID="1" type="天気予報用テロップ番号">200</jmx_eb:WeatherCode>
-<jmx_eb:WeatherCode refID="2" type="天気予報用テロップ番号">110</jmx_eb:WeatherCode>
+<jmx_eb:WeatherCode refID="1" type="天気予報用テロップ番号">100</jmx_eb:WeatherCode>
+<jmx_eb:WeatherCode refID="2" type="天気予報用テロップ番号">111</jmx_eb:WeatherCode>
+<jmx_eb:WeatherCode refID="3" type="天気予報用テロップ番号">200</jmx_eb:WeatherCode>
 </WeatherCodePart>
 </Property>
 </Kind>
@@ -328,19 +424,33 @@
 <Type>風</Type>
 <DetailForecast>
 <WindForecastPart refID="1">
-<Sentence>北西の風</Sentence>
+<Sentence>北の風　後　北東の風</Sentence>
 <Base>
-<jmx_eb:WindDirection description="北西の風" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
+<jmx_eb:WindDirection description="北の風" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
 </Base>
+<Becoming>
+<TimeModifier>後</TimeModifier>
+<jmx_eb:WindDirection description="北東の風" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
+</Becoming>
 </WindForecastPart>
 <WindForecastPart refID="2">
-<Sentence>北東の風　後　南西の風</Sentence>
+<Sentence>北東の風　後　北の風</Sentence>
 <Base>
 <jmx_eb:WindDirection description="北東の風" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
 </Base>
 <Becoming>
 <TimeModifier>後</TimeModifier>
-<jmx_eb:WindDirection description="南西の風" type="風向" unit="８方位漢字">南西</jmx_eb:WindDirection>
+<jmx_eb:WindDirection description="北の風" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
+</Becoming>
+</WindForecastPart>
+<WindForecastPart refID="3">
+<Sentence>北東の風　後　北の風</Sentence>
+<Base>
+<jmx_eb:WindDirection description="北東の風" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
+</Base>
+<Becoming>
+<TimeModifier>後</TimeModifier>
+<jmx_eb:WindDirection description="北の風" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
 </Becoming>
 </WindForecastPart>
 </DetailForecast>
@@ -362,6 +472,12 @@
 <jmx_eb:WaveHeight description="５０センチ" type="波高" unit="m">0.5</jmx_eb:WaveHeight>
 </Base>
 </WaveHeightForecastPart>
+<WaveHeightForecastPart refID="3">
+<Sentence>０．５メートル</Sentence>
+<Base>
+<jmx_eb:WaveHeight description="５０センチ" type="波高" unit="m">0.5</jmx_eb:WaveHeight>
+</Base>
+</WaveHeightForecastPart>
 </DetailForecast>
 </Property>
 </Kind>
@@ -374,37 +490,27 @@
 <TimeSeriesInfo>
 <TimeDefines>
 <TimeDefine timeId="1">
-<DateTime>2023-12-25T06:00:00+09:00</DateTime>
-<Duration>PT6H</Duration>
-<Name>０６時から１２時まで</Name>
-</TimeDefine>
-<TimeDefine timeId="2">
-<DateTime>2023-12-25T12:00:00+09:00</DateTime>
-<Duration>PT6H</Duration>
-<Name>１２時から１８時まで</Name>
-</TimeDefine>
-<TimeDefine timeId="3">
-<DateTime>2023-12-25T18:00:00+09:00</DateTime>
+<DateTime>2025-11-11T18:00:00+09:00</DateTime>
 <Duration>PT6H</Duration>
 <Name>１８時から００時まで</Name>
 </TimeDefine>
-<TimeDefine timeId="4">
-<DateTime>2023-12-26T00:00:00+09:00</DateTime>
+<TimeDefine timeId="2">
+<DateTime>2025-11-12T00:00:00+09:00</DateTime>
 <Duration>PT6H</Duration>
 <Name>００時から０６時まで</Name>
 </TimeDefine>
-<TimeDefine timeId="5">
-<DateTime>2023-12-26T06:00:00+09:00</DateTime>
+<TimeDefine timeId="3">
+<DateTime>2025-11-12T06:00:00+09:00</DateTime>
 <Duration>PT6H</Duration>
 <Name>０６時から１２時まで</Name>
 </TimeDefine>
-<TimeDefine timeId="6">
-<DateTime>2023-12-26T12:00:00+09:00</DateTime>
+<TimeDefine timeId="4">
+<DateTime>2025-11-12T12:00:00+09:00</DateTime>
 <Duration>PT6H</Duration>
 <Name>１２時から１８時まで</Name>
 </TimeDefine>
-<TimeDefine timeId="7">
-<DateTime>2023-12-26T18:00:00+09:00</DateTime>
+<TimeDefine timeId="5">
+<DateTime>2025-11-12T18:00:00+09:00</DateTime>
 <Duration>PT6H</Duration>
 <Name>１８時から２４時まで</Name>
 </TimeDefine>
@@ -414,13 +520,11 @@
 <Property>
 <Type>降水確率</Type>
 <ProbabilityOfPrecipitationPart>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨か雪" description="２０パーセント" refID="1" type="６時間降水確率" unit="%">20</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨か雪" description="１０パーセント" refID="2" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨か雪" description="１０パーセント" refID="3" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨か雪" description="０パーセント" refID="4" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="1" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="2" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="3" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="4" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
 <jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="5" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="6" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="7" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
 </ProbabilityOfPrecipitationPart>
 </Property>
 </Kind>
@@ -434,13 +538,11 @@
 <Property>
 <Type>降水確率</Type>
 <ProbabilityOfPrecipitationPart>
-<jmx_eb:ProbabilityOfPrecipitation condition="雪か雨" description="２０パーセント" refID="1" type="６時間降水確率" unit="%">20</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨か雪" description="１０パーセント" refID="2" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨か雪" description="１０パーセント" refID="3" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨か雪" description="０パーセント" refID="4" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="1" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="2" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="3" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="4" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
 <jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="5" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="6" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="7" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
 </ProbabilityOfPrecipitationPart>
 </Property>
 </Kind>
@@ -454,13 +556,11 @@
 <Property>
 <Type>降水確率</Type>
 <ProbabilityOfPrecipitationPart>
-<jmx_eb:ProbabilityOfPrecipitation condition="雪か雨" description="２０パーセント" refID="1" type="６時間降水確率" unit="%">20</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨か雪" description="１０パーセント" refID="2" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雪か雨" description="１０パーセント" refID="3" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雪か雨" description="０パーセント" refID="4" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨か雪" description="０パーセント" refID="5" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="6" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="7" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="1" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="2" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="3" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="4" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="5" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
 </ProbabilityOfPrecipitationPart>
 </Property>
 </Kind>
@@ -474,13 +574,11 @@
 <Property>
 <Type>降水確率</Type>
 <ProbabilityOfPrecipitationPart>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨か雪" description="１０パーセント" refID="1" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="2" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雪か雨" description="１０パーセント" refID="3" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雪か雨" description="０パーセント" refID="4" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="5" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="6" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
-<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="7" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="1" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="2" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="０パーセント" refID="3" type="６時間降水確率" unit="%">0</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="4" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
+<jmx_eb:ProbabilityOfPrecipitation condition="雨" description="１０パーセント" refID="5" type="６時間降水確率" unit="%">10</jmx_eb:ProbabilityOfPrecipitation>
 </ProbabilityOfPrecipitationPart>
 </Property>
 </Kind>
@@ -495,22 +593,12 @@
 <TimeSeriesInfo>
 <TimeDefines>
 <TimeDefine timeId="1">
-<DateTime>2023-12-25T09:00:00+09:00</DateTime>
-<Duration>PT9H</Duration>
-<Name>今日日中</Name>
-</TimeDefine>
-<TimeDefine timeId="2">
-<DateTime>2023-12-25T00:00:00+09:00</DateTime>
-<Duration>PT24H</Duration>
-<Name>今日</Name>
-</TimeDefine>
-<TimeDefine timeId="3">
-<DateTime>2023-12-26T00:00:00+09:00</DateTime>
+<DateTime>2025-11-12T00:00:00+09:00</DateTime>
 <Duration>PT9H</Duration>
 <Name>明日朝</Name>
 </TimeDefine>
-<TimeDefine timeId="4">
-<DateTime>2023-12-26T09:00:00+09:00</DateTime>
+<TimeDefine timeId="2">
+<DateTime>2025-11-12T09:00:00+09:00</DateTime>
 <Duration>PT9H</Duration>
 <Name>明日日中</Name>
 </TimeDefine>
@@ -518,27 +606,15 @@
 <Item>
 <Kind>
 <Property>
-<Type>日中の最高気温</Type>
-<TemperaturePart>
-<jmx_eb:Temperature description="９度" refID="1" type="日中の最高気温" unit="度">9</jmx_eb:Temperature>
-</TemperaturePart>
-</Property>
-<Property>
-<Type>最高気温</Type>
-<TemperaturePart>
-<jmx_eb:Temperature description="９度" refID="2" type="最高気温" unit="度">9</jmx_eb:Temperature>
-</TemperaturePart>
-</Property>
-<Property>
 <Type>朝の最低気温</Type>
 <TemperaturePart>
-<jmx_eb:Temperature description="４度" refID="3" type="朝の最低気温" unit="度">4</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１１度" refID="1" type="朝の最低気温" unit="度">11</jmx_eb:Temperature>
 </TemperaturePart>
 </Property>
 <Property>
 <Type>日中の最高気温</Type>
 <TemperaturePart>
-<jmx_eb:Temperature description="１１度" refID="4" type="日中の最高気温" unit="度">11</jmx_eb:Temperature>
+<jmx_eb:Temperature description="２１度" refID="2" type="日中の最高気温" unit="度">21</jmx_eb:Temperature>
 </TemperaturePart>
 </Property>
 </Kind>
@@ -550,27 +626,15 @@
 <Item>
 <Kind>
 <Property>
-<Type>日中の最高気温</Type>
-<TemperaturePart>
-<jmx_eb:Temperature description="８度" refID="1" type="日中の最高気温" unit="度">8</jmx_eb:Temperature>
-</TemperaturePart>
-</Property>
-<Property>
-<Type>最高気温</Type>
-<TemperaturePart>
-<jmx_eb:Temperature description="８度" refID="2" type="最高気温" unit="度">8</jmx_eb:Temperature>
-</TemperaturePart>
-</Property>
-<Property>
 <Type>朝の最低気温</Type>
 <TemperaturePart>
-<jmx_eb:Temperature description="３度" refID="3" type="朝の最低気温" unit="度">3</jmx_eb:Temperature>
+<jmx_eb:Temperature description="９度" refID="1" type="朝の最低気温" unit="度">9</jmx_eb:Temperature>
 </TemperaturePart>
 </Property>
 <Property>
 <Type>日中の最高気温</Type>
 <TemperaturePart>
-<jmx_eb:Temperature description="１１度" refID="4" type="日中の最高気温" unit="度">11</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１９度" refID="2" type="日中の最高気温" unit="度">19</jmx_eb:Temperature>
 </TemperaturePart>
 </Property>
 </Kind>
@@ -582,27 +646,15 @@
 <Item>
 <Kind>
 <Property>
-<Type>日中の最高気温</Type>
-<TemperaturePart>
-<jmx_eb:Temperature description="８度" refID="1" type="日中の最高気温" unit="度">8</jmx_eb:Temperature>
-</TemperaturePart>
-</Property>
-<Property>
-<Type>最高気温</Type>
-<TemperaturePart>
-<jmx_eb:Temperature description="８度" refID="2" type="最高気温" unit="度">8</jmx_eb:Temperature>
-</TemperaturePart>
-</Property>
-<Property>
 <Type>朝の最低気温</Type>
 <TemperaturePart>
-<jmx_eb:Temperature description="１度" refID="3" type="朝の最低気温" unit="度">1</jmx_eb:Temperature>
+<jmx_eb:Temperature description="７度" refID="1" type="朝の最低気温" unit="度">7</jmx_eb:Temperature>
 </TemperaturePart>
 </Property>
 <Property>
 <Type>日中の最高気温</Type>
 <TemperaturePart>
-<jmx_eb:Temperature description="１１度" refID="4" type="日中の最高気温" unit="度">11</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１９度" refID="2" type="日中の最高気温" unit="度">19</jmx_eb:Temperature>
 </TemperaturePart>
 </Property>
 </Kind>
@@ -614,27 +666,15 @@
 <Item>
 <Kind>
 <Property>
-<Type>日中の最高気温</Type>
-<TemperaturePart>
-<jmx_eb:Temperature description="９度" refID="1" type="日中の最高気温" unit="度">9</jmx_eb:Temperature>
-</TemperaturePart>
-</Property>
-<Property>
-<Type>最高気温</Type>
-<TemperaturePart>
-<jmx_eb:Temperature description="９度" refID="2" type="最高気温" unit="度">9</jmx_eb:Temperature>
-</TemperaturePart>
-</Property>
-<Property>
 <Type>朝の最低気温</Type>
 <TemperaturePart>
-<jmx_eb:Temperature description="０度" refID="3" type="朝の最低気温" unit="度">0</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１０度" refID="1" type="朝の最低気温" unit="度">10</jmx_eb:Temperature>
 </TemperaturePart>
 </Property>
 <Property>
 <Type>日中の最高気温</Type>
 <TemperaturePart>
-<jmx_eb:Temperature description="１１度" refID="4" type="日中の最高気温" unit="度">11</jmx_eb:Temperature>
+<jmx_eb:Temperature description="２１度" refID="2" type="日中の最高気温" unit="度">21</jmx_eb:Temperature>
 </TemperaturePart>
 </Property>
 </Kind>
@@ -649,59 +689,43 @@
 <TimeSeriesInfo>
 <TimeDefines>
 <TimeDefine timeId="1">
-<DateTime>2023-12-25T06:00:00+09:00</DateTime>
+<DateTime>2025-11-11T18:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
 </TimeDefine>
 <TimeDefine timeId="2">
-<DateTime>2023-12-25T09:00:00+09:00</DateTime>
+<DateTime>2025-11-11T21:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
 </TimeDefine>
 <TimeDefine timeId="3">
-<DateTime>2023-12-25T12:00:00+09:00</DateTime>
+<DateTime>2025-11-12T00:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
 </TimeDefine>
 <TimeDefine timeId="4">
-<DateTime>2023-12-25T15:00:00+09:00</DateTime>
+<DateTime>2025-11-12T03:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
 </TimeDefine>
 <TimeDefine timeId="5">
-<DateTime>2023-12-25T18:00:00+09:00</DateTime>
+<DateTime>2025-11-12T06:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
 </TimeDefine>
 <TimeDefine timeId="6">
-<DateTime>2023-12-25T21:00:00+09:00</DateTime>
+<DateTime>2025-11-12T09:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
 </TimeDefine>
 <TimeDefine timeId="7">
-<DateTime>2023-12-26T00:00:00+09:00</DateTime>
+<DateTime>2025-11-12T12:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
 </TimeDefine>
 <TimeDefine timeId="8">
-<DateTime>2023-12-26T03:00:00+09:00</DateTime>
+<DateTime>2025-11-12T15:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
 </TimeDefine>
 <TimeDefine timeId="9">
-<DateTime>2023-12-26T06:00:00+09:00</DateTime>
+<DateTime>2025-11-12T18:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
 </TimeDefine>
 <TimeDefine timeId="10">
-<DateTime>2023-12-26T09:00:00+09:00</DateTime>
-<Duration>PT3H</Duration>
-</TimeDefine>
-<TimeDefine timeId="11">
-<DateTime>2023-12-26T12:00:00+09:00</DateTime>
-<Duration>PT3H</Duration>
-</TimeDefine>
-<TimeDefine timeId="12">
-<DateTime>2023-12-26T15:00:00+09:00</DateTime>
-<Duration>PT3H</Duration>
-</TimeDefine>
-<TimeDefine timeId="13">
-<DateTime>2023-12-26T18:00:00+09:00</DateTime>
-<Duration>PT3H</Duration>
-</TimeDefine>
-<TimeDefine timeId="14">
-<DateTime>2023-12-26T21:00:00+09:00</DateTime>
+<DateTime>2025-11-12T21:00:00+09:00</DateTime>
 <Duration>PT3H</Duration>
 </TimeDefine>
 </TimeDefines>
@@ -710,20 +734,16 @@
 <Property>
 <Type>３時間内卓越天気</Type>
 <WeatherPart>
-<jmx_eb:Weather refID="1" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="2" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="3" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="4" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="5" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="6" type="天気">くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="1" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="2" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="3" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="4" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="5" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="6" type="天気">晴れ</jmx_eb:Weather>
 <jmx_eb:Weather refID="7" type="天気">くもり</jmx_eb:Weather>
 <jmx_eb:Weather refID="8" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="9" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="9" type="天気">くもり</jmx_eb:Weather>
 <jmx_eb:Weather refID="10" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="11" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="12" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="13" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="14" type="天気">くもり</jmx_eb:Weather>
 </WeatherPart>
 </Property>
 </Kind>
@@ -731,36 +751,28 @@
 <Property>
 <Type>３時間内代表風</Type>
 <WindDirectionPart>
-<jmx_eb:WindDirection refID="1" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="2" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="3" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="4" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="5" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="6" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="7" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="8" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="9" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="1" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="2" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="3" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="4" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="5" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="6" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="7" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="8" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="9" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
 <jmx_eb:WindDirection refID="10" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="11" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="12" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="13" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="14" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
 </WindDirectionPart>
 <WindSpeedPart>
-<WindSpeedLevel description="毎秒６から９メートル" range="6 9" refID="1" type="風速階級">3</WindSpeedLevel>
-<WindSpeedLevel description="毎秒６から９メートル" range="6 9" refID="2" type="風速階級">3</WindSpeedLevel>
-<WindSpeedLevel description="毎秒６から９メートル" range="6 9" refID="3" type="風速階級">3</WindSpeedLevel>
-<WindSpeedLevel description="毎秒６から９メートル" range="6 9" refID="4" type="風速階級">3</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="5" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="6" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="1" type="風速階級">2</WindSpeedLevel>
+<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="2" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="3" type="風速階級">2</WindSpeedLevel>
+<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="4" type="風速階級">2</WindSpeedLevel>
+<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="5" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="6" type="風速階級">2</WindSpeedLevel>
 <WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="7" type="風速階級">2</WindSpeedLevel>
 <WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="8" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒６から９メートル" range="6 9" refID="9" type="風速階級">3</WindSpeedLevel>
-<WindSpeedLevel description="毎秒６から９メートル" range="6 9" refID="10" type="風速階級">3</WindSpeedLevel>
-<WindSpeedLevel description="毎秒６から９メートル" range="6 9" refID="11" type="風速階級">3</WindSpeedLevel>
-<WindSpeedLevel description="毎秒６から９メートル" range="6 9" refID="12" type="風速階級">3</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="13" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="14" type="風速階級">2</WindSpeedLevel>
+<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="9" type="風速階級">2</WindSpeedLevel>
+<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="10" type="風速階級">1</WindSpeedLevel>
 </WindSpeedPart>
 </Property>
 </Kind>
@@ -774,20 +786,16 @@
 <Property>
 <Type>３時間内卓越天気</Type>
 <WeatherPart>
-<jmx_eb:Weather refID="1" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="2" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="3" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="4" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="5" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="6" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="7" type="天気">くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="1" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="2" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="3" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="4" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="5" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="6" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="7" type="天気">晴れ</jmx_eb:Weather>
 <jmx_eb:Weather refID="8" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="9" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="9" type="天気">くもり</jmx_eb:Weather>
 <jmx_eb:Weather refID="10" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="11" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="12" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="13" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="14" type="天気">くもり</jmx_eb:Weather>
 </WeatherPart>
 </Property>
 </Kind>
@@ -795,36 +803,28 @@
 <Property>
 <Type>３時間内代表風</Type>
 <WindDirectionPart>
-<jmx_eb:WindDirection refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="5" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="6" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="7" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="8" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="9" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="10" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="11" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="12" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="13" type="風向" unit="８方位漢字">南西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="14" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="1" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="2" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="3" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="4" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="5" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="6" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="7" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="8" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="9" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="10" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
 </WindDirectionPart>
 <WindSpeedPart>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="1" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="2" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="3" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="4" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="5" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="6" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="1" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="2" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="3" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="4" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="5" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="6" type="風速階級">2</WindSpeedLevel>
 <WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="7" type="風速階級">2</WindSpeedLevel>
 <WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="8" type="風速階級">2</WindSpeedLevel>
 <WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="9" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="10" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="11" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="12" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="13" type="風速階級">1</WindSpeedLevel>
-<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="14" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="10" type="風速階級">1</WindSpeedLevel>
 </WindSpeedPart>
 </Property>
 </Kind>
@@ -838,20 +838,16 @@
 <Property>
 <Type>３時間内卓越天気</Type>
 <WeatherPart>
-<jmx_eb:Weather refID="1" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="2" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="3" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="4" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="5" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="6" type="天気">くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="1" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="2" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="3" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="4" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="5" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="6" type="天気">晴れ</jmx_eb:Weather>
 <jmx_eb:Weather refID="7" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="8" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="9" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="10" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="11" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="12" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="13" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="14" type="天気">くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="8" type="天気">くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="9" type="天気">くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="10" type="天気">くもり</jmx_eb:Weather>
 </WeatherPart>
 </Property>
 </Kind>
@@ -859,36 +855,28 @@
 <Property>
 <Type>３時間内代表風</Type>
 <WindDirectionPart>
-<jmx_eb:WindDirection refID="1" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="2" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="3" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="4" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="5" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="6" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="7" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="8" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="9" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="1" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="2" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="3" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="4" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="5" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="6" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="7" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="8" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="9" type="風向" unit="８方位漢字">南東</jmx_eb:WindDirection>
 <jmx_eb:WindDirection refID="10" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="11" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="12" type="風向" unit="８方位漢字">西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="13" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="14" type="風向" unit="８方位漢字">南</jmx_eb:WindDirection>
 </WindDirectionPart>
 <WindSpeedPart>
 <WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="1" type="風速階級">1</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="2" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="3" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="4" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="5" type="風速階級">2</WindSpeedLevel>
+<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="2" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="3" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="4" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="5" type="風速階級">1</WindSpeedLevel>
 <WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="6" type="風速階級">1</WindSpeedLevel>
 <WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="7" type="風速階級">1</WindSpeedLevel>
 <WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="8" type="風速階級">1</WindSpeedLevel>
 <WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="9" type="風速階級">1</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="10" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="11" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="12" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="13" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="14" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="10" type="風速階級">1</WindSpeedLevel>
 </WindSpeedPart>
 </Property>
 </Kind>
@@ -902,20 +890,16 @@
 <Property>
 <Type>３時間内卓越天気</Type>
 <WeatherPart>
-<jmx_eb:Weather refID="1" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="2" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="3" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="4" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="5" type="天気">くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="1" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="2" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="3" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="4" type="天気">晴れ</jmx_eb:Weather>
+<jmx_eb:Weather refID="5" type="天気">晴れ</jmx_eb:Weather>
 <jmx_eb:Weather refID="6" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="7" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="8" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="9" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="10" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="11" type="天気">くもり</jmx_eb:Weather>
-<jmx_eb:Weather refID="12" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="13" type="天気">晴れ</jmx_eb:Weather>
-<jmx_eb:Weather refID="14" type="天気">くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="7" type="天気">くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="8" type="天気">くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="9" type="天気">くもり</jmx_eb:Weather>
+<jmx_eb:Weather refID="10" type="天気">くもり</jmx_eb:Weather>
 </WeatherPart>
 </Property>
 </Kind>
@@ -923,36 +907,28 @@
 <Property>
 <Type>３時間内代表風</Type>
 <WindDirectionPart>
-<jmx_eb:WindDirection refID="1" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="2" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="3" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="4" type="風向" unit="８方位漢字">北西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="5" type="風向" unit="８方位漢字">南西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="6" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="1" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="2" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="3" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="4" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="5" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="6" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
 <jmx_eb:WindDirection refID="7" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="8" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="9" type="風向" unit="８方位漢字">北東</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="10" type="風向" unit="８方位漢字">南西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="11" type="風向" unit="８方位漢字">南西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="12" type="風向" unit="８方位漢字">南西</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="13" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
-<jmx_eb:WindDirection refID="14" type="風向" unit="８方位漢字">東</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="8" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="9" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
+<jmx_eb:WindDirection refID="10" type="風向" unit="８方位漢字">北</jmx_eb:WindDirection>
 </WindDirectionPart>
 <WindSpeedPart>
 <WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="1" type="風速階級">2</WindSpeedLevel>
 <WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="2" type="風速階級">2</WindSpeedLevel>
 <WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="3" type="風速階級">2</WindSpeedLevel>
 <WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="4" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="5" type="風速階級">1</WindSpeedLevel>
-<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="6" type="風速階級">1</WindSpeedLevel>
-<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="7" type="風速階級">1</WindSpeedLevel>
-<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="8" type="風速階級">1</WindSpeedLevel>
-<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="9" type="風速階級">1</WindSpeedLevel>
+<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="5" type="風速階級">2</WindSpeedLevel>
+<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="6" type="風速階級">2</WindSpeedLevel>
+<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="7" type="風速階級">2</WindSpeedLevel>
+<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="8" type="風速階級">2</WindSpeedLevel>
+<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="9" type="風速階級">2</WindSpeedLevel>
 <WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="10" type="風速階級">1</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="11" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒３から５メートル" range="3 5" refID="12" type="風速階級">2</WindSpeedLevel>
-<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="13" type="風速階級">1</WindSpeedLevel>
-<WindSpeedLevel description="毎秒０から２メートル" range="0 2" refID="14" type="風速階級">1</WindSpeedLevel>
 </WindSpeedPart>
 </Property>
 </Kind>
@@ -967,49 +943,37 @@
 <TimeSeriesInfo>
 <TimeDefines>
 <TimeDefine timeId="1">
-<DateTime>2023-12-25T06:00:00+09:00</DateTime>
+<DateTime>2025-11-11T18:00:00+09:00</DateTime>
 </TimeDefine>
 <TimeDefine timeId="2">
-<DateTime>2023-12-25T09:00:00+09:00</DateTime>
+<DateTime>2025-11-11T21:00:00+09:00</DateTime>
 </TimeDefine>
 <TimeDefine timeId="3">
-<DateTime>2023-12-25T12:00:00+09:00</DateTime>
+<DateTime>2025-11-12T00:00:00+09:00</DateTime>
 </TimeDefine>
 <TimeDefine timeId="4">
-<DateTime>2023-12-25T15:00:00+09:00</DateTime>
+<DateTime>2025-11-12T03:00:00+09:00</DateTime>
 </TimeDefine>
 <TimeDefine timeId="5">
-<DateTime>2023-12-25T18:00:00+09:00</DateTime>
+<DateTime>2025-11-12T06:00:00+09:00</DateTime>
 </TimeDefine>
 <TimeDefine timeId="6">
-<DateTime>2023-12-25T21:00:00+09:00</DateTime>
+<DateTime>2025-11-12T09:00:00+09:00</DateTime>
 </TimeDefine>
 <TimeDefine timeId="7">
-<DateTime>2023-12-26T00:00:00+09:00</DateTime>
+<DateTime>2025-11-12T12:00:00+09:00</DateTime>
 </TimeDefine>
 <TimeDefine timeId="8">
-<DateTime>2023-12-26T03:00:00+09:00</DateTime>
+<DateTime>2025-11-12T15:00:00+09:00</DateTime>
 </TimeDefine>
 <TimeDefine timeId="9">
-<DateTime>2023-12-26T06:00:00+09:00</DateTime>
+<DateTime>2025-11-12T18:00:00+09:00</DateTime>
 </TimeDefine>
 <TimeDefine timeId="10">
-<DateTime>2023-12-26T09:00:00+09:00</DateTime>
+<DateTime>2025-11-12T21:00:00+09:00</DateTime>
 </TimeDefine>
 <TimeDefine timeId="11">
-<DateTime>2023-12-26T12:00:00+09:00</DateTime>
-</TimeDefine>
-<TimeDefine timeId="12">
-<DateTime>2023-12-26T15:00:00+09:00</DateTime>
-</TimeDefine>
-<TimeDefine timeId="13">
-<DateTime>2023-12-26T18:00:00+09:00</DateTime>
-</TimeDefine>
-<TimeDefine timeId="14">
-<DateTime>2023-12-26T21:00:00+09:00</DateTime>
-</TimeDefine>
-<TimeDefine timeId="15">
-<DateTime>2023-12-27T00:00:00+09:00</DateTime>
+<DateTime>2025-11-13T00:00:00+09:00</DateTime>
 </TimeDefine>
 </TimeDefines>
 <Item>
@@ -1017,21 +981,17 @@
 <Property>
 <Type>３時間毎気温</Type>
 <TemperaturePart>
-<jmx_eb:Temperature description="６度" refID="1" type="気温" unit="度">6</jmx_eb:Temperature>
-<jmx_eb:Temperature description="６度" refID="2" type="気温" unit="度">6</jmx_eb:Temperature>
-<jmx_eb:Temperature description="７度" refID="3" type="気温" unit="度">7</jmx_eb:Temperature>
-<jmx_eb:Temperature description="８度" refID="4" type="気温" unit="度">8</jmx_eb:Temperature>
-<jmx_eb:Temperature description="８度" refID="5" type="気温" unit="度">8</jmx_eb:Temperature>
-<jmx_eb:Temperature description="７度" refID="6" type="気温" unit="度">7</jmx_eb:Temperature>
-<jmx_eb:Temperature description="５度" refID="7" type="気温" unit="度">5</jmx_eb:Temperature>
-<jmx_eb:Temperature description="５度" refID="8" type="気温" unit="度">5</jmx_eb:Temperature>
-<jmx_eb:Temperature description="５度" refID="9" type="気温" unit="度">5</jmx_eb:Temperature>
-<jmx_eb:Temperature description="６度" refID="10" type="気温" unit="度">6</jmx_eb:Temperature>
-<jmx_eb:Temperature description="１０度" refID="11" type="気温" unit="度">10</jmx_eb:Temperature>
-<jmx_eb:Temperature description="１１度" refID="12" type="気温" unit="度">11</jmx_eb:Temperature>
-<jmx_eb:Temperature description="９度" refID="13" type="気温" unit="度">9</jmx_eb:Temperature>
-<jmx_eb:Temperature description="９度" refID="14" type="気温" unit="度">9</jmx_eb:Temperature>
-<jmx_eb:Temperature description="９度" refID="15" type="気温" unit="度">9</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１６度" refID="1" type="気温" unit="度">16</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１５度" refID="2" type="気温" unit="度">15</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１４度" refID="3" type="気温" unit="度">14</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１２度" refID="4" type="気温" unit="度">12</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１２度" refID="5" type="気温" unit="度">12</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１５度" refID="6" type="気温" unit="度">15</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１９度" refID="7" type="気温" unit="度">19</jmx_eb:Temperature>
+<jmx_eb:Temperature description="２０度" refID="8" type="気温" unit="度">20</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１８度" refID="9" type="気温" unit="度">18</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１７度" refID="10" type="気温" unit="度">17</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１６度" refID="11" type="気温" unit="度">16</jmx_eb:Temperature>
 </TemperaturePart>
 </Property>
 </Kind>
@@ -1045,21 +1005,17 @@
 <Property>
 <Type>３時間毎気温</Type>
 <TemperaturePart>
-<jmx_eb:Temperature description="５度" refID="1" type="気温" unit="度">5</jmx_eb:Temperature>
-<jmx_eb:Temperature description="５度" refID="2" type="気温" unit="度">5</jmx_eb:Temperature>
-<jmx_eb:Temperature description="７度" refID="3" type="気温" unit="度">7</jmx_eb:Temperature>
-<jmx_eb:Temperature description="７度" refID="4" type="気温" unit="度">7</jmx_eb:Temperature>
-<jmx_eb:Temperature description="７度" refID="5" type="気温" unit="度">7</jmx_eb:Temperature>
-<jmx_eb:Temperature description="６度" refID="6" type="気温" unit="度">6</jmx_eb:Temperature>
-<jmx_eb:Temperature description="５度" refID="7" type="気温" unit="度">5</jmx_eb:Temperature>
-<jmx_eb:Temperature description="４度" refID="8" type="気温" unit="度">4</jmx_eb:Temperature>
-<jmx_eb:Temperature description="５度" refID="9" type="気温" unit="度">5</jmx_eb:Temperature>
-<jmx_eb:Temperature description="６度" refID="10" type="気温" unit="度">6</jmx_eb:Temperature>
-<jmx_eb:Temperature description="９度" refID="11" type="気温" unit="度">9</jmx_eb:Temperature>
-<jmx_eb:Temperature description="１１度" refID="12" type="気温" unit="度">11</jmx_eb:Temperature>
-<jmx_eb:Temperature description="１０度" refID="13" type="気温" unit="度">10</jmx_eb:Temperature>
-<jmx_eb:Temperature description="９度" refID="14" type="気温" unit="度">9</jmx_eb:Temperature>
-<jmx_eb:Temperature description="８度" refID="15" type="気温" unit="度">8</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１５度" refID="1" type="気温" unit="度">15</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１３度" refID="2" type="気温" unit="度">13</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１１度" refID="3" type="気温" unit="度">11</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１１度" refID="4" type="気温" unit="度">11</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１０度" refID="5" type="気温" unit="度">10</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１４度" refID="6" type="気温" unit="度">14</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１８度" refID="7" type="気温" unit="度">18</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１８度" refID="8" type="気温" unit="度">18</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１７度" refID="9" type="気温" unit="度">17</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１５度" refID="10" type="気温" unit="度">15</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１４度" refID="11" type="気温" unit="度">14</jmx_eb:Temperature>
 </TemperaturePart>
 </Property>
 </Kind>
@@ -1073,21 +1029,17 @@
 <Property>
 <Type>３時間毎気温</Type>
 <TemperaturePart>
-<jmx_eb:Temperature description="５度" refID="1" type="気温" unit="度">5</jmx_eb:Temperature>
-<jmx_eb:Temperature description="５度" refID="2" type="気温" unit="度">5</jmx_eb:Temperature>
-<jmx_eb:Temperature description="６度" refID="3" type="気温" unit="度">6</jmx_eb:Temperature>
-<jmx_eb:Temperature description="７度" refID="4" type="気温" unit="度">7</jmx_eb:Temperature>
-<jmx_eb:Temperature description="６度" refID="5" type="気温" unit="度">6</jmx_eb:Temperature>
-<jmx_eb:Temperature description="５度" refID="6" type="気温" unit="度">5</jmx_eb:Temperature>
-<jmx_eb:Temperature description="３度" refID="7" type="気温" unit="度">3</jmx_eb:Temperature>
-<jmx_eb:Temperature description="２度" refID="8" type="気温" unit="度">2</jmx_eb:Temperature>
-<jmx_eb:Temperature description="２度" refID="9" type="気温" unit="度">2</jmx_eb:Temperature>
-<jmx_eb:Temperature description="３度" refID="10" type="気温" unit="度">3</jmx_eb:Temperature>
-<jmx_eb:Temperature description="８度" refID="11" type="気温" unit="度">8</jmx_eb:Temperature>
-<jmx_eb:Temperature description="１０度" refID="12" type="気温" unit="度">10</jmx_eb:Temperature>
-<jmx_eb:Temperature description="８度" refID="13" type="気温" unit="度">8</jmx_eb:Temperature>
-<jmx_eb:Temperature description="７度" refID="14" type="気温" unit="度">7</jmx_eb:Temperature>
-<jmx_eb:Temperature description="６度" refID="15" type="気温" unit="度">6</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１４度" refID="1" type="気温" unit="度">14</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１１度" refID="2" type="気温" unit="度">11</jmx_eb:Temperature>
+<jmx_eb:Temperature description="９度" refID="3" type="気温" unit="度">9</jmx_eb:Temperature>
+<jmx_eb:Temperature description="８度" refID="4" type="気温" unit="度">8</jmx_eb:Temperature>
+<jmx_eb:Temperature description="９度" refID="5" type="気温" unit="度">9</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１２度" refID="6" type="気温" unit="度">12</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１８度" refID="7" type="気温" unit="度">18</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１８度" refID="8" type="気温" unit="度">18</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１６度" refID="9" type="気温" unit="度">16</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１４度" refID="10" type="気温" unit="度">14</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１３度" refID="11" type="気温" unit="度">13</jmx_eb:Temperature>
 </TemperaturePart>
 </Property>
 </Kind>
@@ -1101,21 +1053,17 @@
 <Property>
 <Type>３時間毎気温</Type>
 <TemperaturePart>
-<jmx_eb:Temperature description="３度" refID="1" type="気温" unit="度">3</jmx_eb:Temperature>
-<jmx_eb:Temperature description="４度" refID="2" type="気温" unit="度">4</jmx_eb:Temperature>
-<jmx_eb:Temperature description="７度" refID="3" type="気温" unit="度">7</jmx_eb:Temperature>
-<jmx_eb:Temperature description="８度" refID="4" type="気温" unit="度">8</jmx_eb:Temperature>
-<jmx_eb:Temperature description="７度" refID="5" type="気温" unit="度">7</jmx_eb:Temperature>
-<jmx_eb:Temperature description="４度" refID="6" type="気温" unit="度">4</jmx_eb:Temperature>
-<jmx_eb:Temperature description="２度" refID="7" type="気温" unit="度">2</jmx_eb:Temperature>
-<jmx_eb:Temperature description="１度" refID="8" type="気温" unit="度">1</jmx_eb:Temperature>
-<jmx_eb:Temperature description="１度" refID="9" type="気温" unit="度">1</jmx_eb:Temperature>
-<jmx_eb:Temperature description="３度" refID="10" type="気温" unit="度">3</jmx_eb:Temperature>
-<jmx_eb:Temperature description="８度" refID="11" type="気温" unit="度">8</jmx_eb:Temperature>
-<jmx_eb:Temperature description="１０度" refID="12" type="気温" unit="度">10</jmx_eb:Temperature>
-<jmx_eb:Temperature description="８度" refID="13" type="気温" unit="度">8</jmx_eb:Temperature>
-<jmx_eb:Temperature description="６度" refID="14" type="気温" unit="度">6</jmx_eb:Temperature>
-<jmx_eb:Temperature description="６度" refID="15" type="気温" unit="度">6</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１５度" refID="1" type="気温" unit="度">15</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１３度" refID="2" type="気温" unit="度">13</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１２度" refID="3" type="気温" unit="度">12</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１１度" refID="4" type="気温" unit="度">11</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１２度" refID="5" type="気温" unit="度">12</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１４度" refID="6" type="気温" unit="度">14</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１８度" refID="7" type="気温" unit="度">18</jmx_eb:Temperature>
+<jmx_eb:Temperature description="２１度" refID="8" type="気温" unit="度">21</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１７度" refID="9" type="気温" unit="度">17</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１６度" refID="10" type="気温" unit="度">16</jmx_eb:Temperature>
+<jmx_eb:Temperature description="１６度" refID="11" type="気温" unit="度">16</jmx_eb:Temperature>
 </TemperaturePart>
 </Property>
 </Kind>
